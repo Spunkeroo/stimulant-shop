@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stimulant Shop — Nootropics, Focus Supplements & Cognitive Enhancers</title>
+  <meta name="description" content="Shop the best nootropics, focus supplements, and cognitive enhancers. Curated by science. Ranked by evidence. Free shipping on every order.">
+  <meta name="keywords" content="nootropics, focus supplements, cognitive enhancers, L-theanine, alpha GPC, lion's mane, caffeine pills, brain supplements, ADHD supplements">
+  <meta property="og:title" content="Stimulant Shop — Science-Backed Focus Supplements">
+  <meta property="og:description" content="The best nootropics and focus supplements, curated by evidence. Free shipping on every order.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://stimulant.shop">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💊</text></svg>">
+  <link rel="canonical" href="https://stimulant.shop">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box;}
+    :root{
+      --bg:#050508;--surface:#0a0a12;--card:#0e0e18;--card-hover:#121220;
+      --border:#1a1a2e;--text:#e8e8f0;--dim:#8888a0;--muted:#555568;
+      --accent:#10b981;--accent-glow:rgba(16,185,129,0.12);
+      --blue:#6366f1;--orange:#f59e0b;--red:#ef4444;--cyan:#06b6d4;--purple:#a855f7;
+    }
+    html{scroll-behavior:smooth;}
+    body{background:var(--bg);color:var(--text);font-family:'Inter',-apple-system,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased;}
+    a{color:var(--accent);text-decoration:none;}
+
+    /* ANNOUNCEMENT BAR */
+    .announce{background:linear-gradient(90deg,var(--accent),var(--cyan));text-align:center;padding:0.5rem;font-size:0.75rem;font-weight:700;color:#000;letter-spacing:0.5px;}
+
+    /* NAV */
+    .nav{position:sticky;top:0;z-index:100;background:rgba(5,5,8,0.95);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);}
+    .nav-inner{max-width:1200px;margin:0 auto;padding:0.7rem 1.5rem;display:flex;align-items:center;justify-content:space-between;gap:1rem;}
+    .nav-logo{font-size:1.1rem;font-weight:900;letter-spacing:-0.5px;white-space:nowrap;}
+    .nav-logo .pill{margin-right:0.3rem;}
+    .nav-logo .shop{color:var(--accent);}
+    .nav-search{flex:1;max-width:400px;position:relative;}
+    .nav-search input{width:100%;background:var(--surface);border:1px solid var(--border);color:var(--text);padding:0.5rem 1rem 0.5rem 2.2rem;border-radius:8px;font-size:0.85rem;font-family:inherit;}
+    .nav-search input:focus{outline:none;border-color:var(--accent);}
+    .nav-search::before{content:'🔍';position:absolute;left:0.7rem;top:50%;transform:translateY(-50%);font-size:0.8rem;}
+    .nav-links{display:flex;gap:1.2rem;align-items:center;}
+    .nav-links a{color:var(--dim);font-size:0.8rem;font-weight:600;transition:color 0.2s;white-space:nowrap;}
+    .nav-links a:hover{color:var(--text);}
+    .nav-cart{position:relative;font-size:1.2rem;cursor:pointer;}
+    @media(max-width:768px){.nav-search{display:none;}.nav-links a:not(.nav-cart){display:none;}}
+
+    /* HERO */
+    .hero{text-align:center;padding:4rem 1.5rem 3rem;position:relative;overflow:hidden;}
+    .hero::before{content:'';position:absolute;top:-200px;left:50%;transform:translateX(-50%);width:800px;height:800px;background:radial-gradient(circle,var(--accent-glow),transparent 70%);pointer-events:none;}
+    .hero-badge{display:inline-block;background:var(--accent-glow);border:1px solid rgba(16,185,129,0.3);color:var(--accent);font-size:0.7rem;font-weight:700;padding:0.25rem 0.8rem;border-radius:50px;margin-bottom:1rem;text-transform:uppercase;letter-spacing:1.5px;}
+    .hero h1{font-size:3rem;font-weight:900;letter-spacing:-2px;line-height:1.1;max-width:700px;margin:0 auto 0.75rem;}
+    .hero h1 .gr{background:linear-gradient(135deg,var(--accent),var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+    .hero p{color:var(--dim);font-size:1rem;max-width:520px;margin:0 auto 2rem;}
+    .hero-cats{display:flex;gap:0.5rem;justify-content:center;flex-wrap:wrap;}
+    .hero-cat{background:var(--surface);border:1px solid var(--border);color:var(--dim);padding:0.45rem 1rem;border-radius:8px;font-size:0.8rem;font-weight:600;cursor:pointer;transition:all 0.2s;}
+    .hero-cat:hover,.hero-cat.active{background:var(--accent);color:#000;border-color:var(--accent);}
+    @media(max-width:600px){.hero h1{font-size:2rem;}}
+
+    /* TRUST BAR */
+    .trust-bar{border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:1rem 1.5rem;display:flex;justify-content:center;gap:2.5rem;flex-wrap:wrap;}
+    .trust-item{display:flex;align-items:center;gap:0.4rem;font-size:0.75rem;color:var(--dim);font-weight:600;}
+    .trust-item .ti{font-size:1rem;}
+
+    /* SECTION */
+    .section{max-width:1200px;margin:0 auto;padding:3rem 1.5rem;}
+    .section-header{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:1.5rem;flex-wrap:wrap;gap:0.5rem;}
+    .section-label{color:var(--accent);font-size:0.7rem;font-weight:700;text-transform:uppercase;letter-spacing:2px;}
+    .section-title{font-size:1.6rem;font-weight:800;letter-spacing:-0.5px;}
+    .section-link{color:var(--accent);font-size:0.8rem;font-weight:600;}
+
+    /* PRODUCT GRID */
+    .product-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:1rem;}
+    .product-card{background:var(--card);border:1px solid var(--border);border-radius:14px;overflow:hidden;transition:all 0.3s;position:relative;cursor:pointer;}
+    .product-card:hover{border-color:var(--accent);transform:translateY(-3px);box-shadow:0 12px 40px rgba(0,0,0,0.3);}
+    .product-badge{position:absolute;top:0.75rem;left:0.75rem;font-size:0.6rem;font-weight:700;padding:0.2rem 0.6rem;border-radius:4px;text-transform:uppercase;letter-spacing:0.5px;z-index:2;}
+    .badge-best{background:var(--accent);color:#000;}
+    .badge-sale{background:var(--red);color:#fff;}
+    .badge-new{background:var(--blue);color:#fff;}
+    .badge-pop{background:var(--orange);color:#000;}
+    .product-img{width:100%;aspect-ratio:1;background:var(--surface);display:flex;align-items:center;justify-content:center;font-size:4rem;border-bottom:1px solid var(--border);}
+    .product-body{padding:1rem;}
+    .product-brand{font-size:0.65rem;color:var(--muted);text-transform:uppercase;letter-spacing:1px;font-weight:600;}
+    .product-name{font-size:0.95rem;font-weight:700;margin:0.2rem 0;line-height:1.3;}
+    .product-desc{font-size:0.75rem;color:var(--dim);margin-bottom:0.5rem;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;}
+    .product-rating{font-size:0.75rem;color:var(--orange);margin-bottom:0.5rem;}
+    .product-rating span{color:var(--muted);font-size:0.7rem;}
+    .product-price-row{display:flex;align-items:center;gap:0.5rem;margin-bottom:0.75rem;}
+    .product-price{font-size:1.2rem;font-weight:800;color:var(--accent);}
+    .product-was{font-size:0.8rem;color:var(--muted);text-decoration:line-through;}
+    .product-serving{font-size:0.65rem;color:var(--muted);}
+    .product-btn{display:block;width:100%;text-align:center;background:var(--accent);color:#000;padding:0.6rem;border-radius:8px;font-weight:700;font-size:0.8rem;border:none;cursor:pointer;transition:all 0.2s;}
+    .product-btn:hover{opacity:0.9;transform:scale(1.02);}
+    .product-btn.outline{background:transparent;border:1px solid var(--border);color:var(--text);}
+    .product-btn.outline:hover{border-color:var(--accent);color:var(--accent);}
+
+    /* BUNDLE */
+    .bundle-card{background:linear-gradient(135deg,rgba(16,185,129,0.08),rgba(6,182,212,0.05));border:2px solid rgba(16,185,129,0.3);border-radius:16px;padding:2rem;text-align:center;margin-bottom:2rem;}
+    .bundle-card h3{font-size:1.4rem;font-weight:800;margin-bottom:0.3rem;}
+    .bundle-card p{color:var(--dim);margin-bottom:1rem;font-size:0.9rem;}
+    .bundle-items{display:flex;gap:0.5rem;justify-content:center;flex-wrap:wrap;margin-bottom:1rem;}
+    .bundle-item{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:0.6rem 1rem;font-size:0.8rem;font-weight:600;}
+    .bundle-price{font-size:2rem;font-weight:900;color:var(--accent);margin-bottom:0.3rem;}
+    .bundle-price .was{font-size:1rem;color:var(--muted);text-decoration:line-through;margin-right:0.5rem;font-weight:500;}
+    .bundle-save{font-size:0.8rem;color:var(--accent);font-weight:700;margin-bottom:1rem;}
+    .bundle-btn{display:inline-block;background:var(--accent);color:#000;padding:0.8rem 2.5rem;border-radius:10px;font-weight:800;font-size:1rem;cursor:pointer;border:none;transition:all 0.2s;}
+    .bundle-btn:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(16,185,129,0.3);}
+
+    /* COMPARISON TABLE */
+    .comp-table{width:100%;border-collapse:collapse;background:var(--card);border-radius:14px;overflow:hidden;border:1px solid var(--border);}
+    .comp-table th{text-align:left;padding:0.7rem 1rem;font-size:0.65rem;text-transform:uppercase;letter-spacing:1px;color:var(--muted);background:var(--surface);border-bottom:1px solid var(--border);}
+    .comp-table td{padding:0.7rem 1rem;font-size:0.8rem;border-bottom:1px solid var(--border);}
+    .comp-table tr:last-child td{border-bottom:none;}
+    .comp-table tr:hover td{background:rgba(16,185,129,0.03);}
+    .comp-name{font-weight:700;}
+    .comp-evidence{font-size:0.65rem;font-weight:700;padding:0.15rem 0.5rem;border-radius:4px;}
+    .ev-strong{background:rgba(16,185,129,0.15);color:var(--accent);}
+    .ev-good{background:rgba(245,158,11,0.15);color:var(--orange);}
+    .ev-limited{background:rgba(239,68,68,0.15);color:var(--red);}
+    @media(max-width:700px){.comp-table{font-size:0.7rem;}.comp-table th,.comp-table td{padding:0.4rem 0.5rem;}}
+
+    /* EMAIL CAPTURE */
+    .email-bar{background:linear-gradient(135deg,var(--card),var(--surface));border:1px solid var(--border);border-radius:16px;padding:2.5rem;text-align:center;margin:2rem 0;}
+    .email-bar h2{font-size:1.5rem;font-weight:800;margin-bottom:0.3rem;}
+    .email-bar p{color:var(--dim);margin-bottom:1.2rem;}
+    .email-form{display:flex;gap:0.5rem;max-width:450px;margin:0 auto;}
+    .email-form input{flex:1;background:var(--bg);border:1px solid var(--border);color:var(--text);padding:0.7rem 1rem;border-radius:8px;font-size:0.85rem;font-family:inherit;}
+    .email-form input:focus{outline:none;border-color:var(--accent);}
+    .email-form button{background:var(--accent);color:#000;border:none;padding:0.7rem 1.5rem;border-radius:8px;font-weight:700;font-size:0.85rem;cursor:pointer;white-space:nowrap;}
+    @media(max-width:500px){.email-form{flex-direction:column;}}
+
+    /* FAQ */
+    .faq-item{border-bottom:1px solid var(--border);}
+    .faq-q{padding:1rem 0;cursor:pointer;font-weight:600;font-size:0.9rem;display:flex;justify-content:space-between;}
+    .faq-q:hover{color:var(--accent);}
+    .faq-a{display:none;padding:0 0 1rem;color:var(--dim);font-size:0.8rem;}
+    .faq-item.open .faq-a{display:block;}
+    .faq-item.open .arrow{transform:rotate(180deg);}
+    .arrow{transition:transform 0.2s;color:var(--muted);}
+
+    /* PROMO */
+    .promo-banner{background:linear-gradient(135deg,#1a1028,#0a0a10 50%,#1a0f0a);border-top:2px solid #a855f7;border-bottom:2px solid #ff5f1f;padding:2rem 1.5rem;text-align:center;}
+    .promo-btns{display:flex;gap:0.75rem;justify-content:center;flex-wrap:wrap;margin-top:1rem;}
+    .promo-btns a{padding:0.6rem 1.5rem;border-radius:8px;font-weight:700;font-size:0.85rem;}
+
+    /* FOOTER */
+    .footer{border-top:1px solid var(--border);padding:3rem 1.5rem 2rem;}
+    .footer-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:2rem;}
+    .footer-section h4{font-size:0.7rem;text-transform:uppercase;letter-spacing:1px;color:var(--muted);margin-bottom:0.6rem;}
+    .footer-section a{display:block;color:var(--dim);font-size:0.8rem;padding:0.2rem 0;}
+    .footer-section a:hover{color:var(--text);}
+    .footer-section p{font-size:0.75rem;color:var(--dim);line-height:1.5;}
+    .footer-bottom{max-width:1200px;margin:1.5rem auto 0;padding-top:1rem;border-top:1px solid var(--border);text-align:center;font-size:0.65rem;color:var(--muted);}
+
+    .disclaimer{background:rgba(239,68,68,0.05);border:1px solid rgba(239,68,68,0.15);border-radius:10px;padding:1rem 1.2rem;margin:1.5rem 0;}
+    .disclaimer h4{color:var(--red);font-size:0.7rem;text-transform:uppercase;letter-spacing:1px;margin-bottom:0.2rem;}
+    .disclaimer p{font-size:0.7rem;color:var(--dim);}
+
+    .fade-in{opacity:0;transform:translateY(20px);transition:all 0.5s ease;}
+    .fade-in.visible{opacity:1;transform:translateY(0);}
+  </style>
+</head>
+<body>
+
+<div class="announce">FREE SHIPPING ON EVERY ORDER — SCIENCE-BACKED SUPPLEMENTS ONLY — USE CODE <strong>FOCUS20</strong> FOR 20% OFF</div>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <div class="nav-logo"><span class="pill">💊</span> stimulant<span class="shop">.shop</span></div>
+    <div class="nav-search"><input type="text" id="search" placeholder="Search supplements..." oninput="filterProducts()"></div>
+    <div class="nav-links">
+      <a href="#focus">Focus</a>
+      <a href="#energy">Energy</a>
+      <a href="#stacks">Stacks</a>
+      <a href="#compare">Compare</a>
+      <a href="https://stimulant.doctor" target="_blank">Learn</a>
+    </div>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-badge">Curated by Science, Not Marketing</div>
+  <h1>The Only Supplements<br><span class="gr">Worth Buying.</span></h1>
+  <p>We test everything. We only sell what actually works. Every product is backed by peer-reviewed research. No proprietary blends. No BS.</p>
+  <div class="hero-cats">
+    <button class="hero-cat active" onclick="filterCat('all')">All</button>
+    <button class="hero-cat" onclick="filterCat('focus')">Focus</button>
+    <button class="hero-cat" onclick="filterCat('energy')">Energy</button>
+    <button class="hero-cat" onclick="filterCat('memory')">Memory</button>
+    <button class="hero-cat" onclick="filterCat('sleep')">Sleep</button>
+    <button class="hero-cat" onclick="filterCat('mood')">Mood</button>
+    <button class="hero-cat" onclick="filterCat('stack')">Stacks</button>
+  </div>
+</section>
+
+<div class="trust-bar">
+  <div class="trust-item"><span class="ti">🔬</span> Evidence-Based Only</div>
+  <div class="trust-item"><span class="ti">📦</span> Free Shipping</div>
+  <div class="trust-item"><span class="ti">✓</span> Third-Party Tested</div>
+  <div class="trust-item"><span class="ti">🔄</span> 30-Day Returns</div>
+  <div class="trust-item"><span class="ti">⭐</span> 50,000+ Customers</div>
+</div>
+
+<!-- BEST SELLER STACK BUNDLE -->
+<div class="section">
+  <div class="bundle-card fade-in">
+    <div class="section-label">Most Popular</div>
+    <h3>The Focus Stack — Everything You Need</h3>
+    <p>Our #1 selling bundle. Caffeine + L-Theanine + Alpha-GPC + Lion's Mane. The complete focus protocol backed by research.</p>
+    <div class="bundle-items">
+      <div class="bundle-item">☕ Caffeine 200mg</div>
+      <div class="bundle-item">🍵 L-Theanine 400mg</div>
+      <div class="bundle-item">🧠 Alpha-GPC 300mg</div>
+      <div class="bundle-item">🍄 Lion's Mane 1000mg</div>
+    </div>
+    <div class="bundle-price"><span class="was">$78.96</span> $49.99</div>
+    <div class="bundle-save">SAVE 37% — Limited Time</div>
+    <a class="bundle-btn" href="https://www.amazon.com/s?k=caffeine+l-theanine+alpha+gpc+lions+mane" target="_blank" rel="noopener sponsored">Shop The Stack →</a>
+  </div>
+</div>
+
+<!-- PRODUCTS -->
+<div class="section" id="focus">
+  <div class="section-header">
+    <div><div class="section-label">Shop</div><div class="section-title">All Products</div></div>
+  </div>
+  <div class="product-grid fade-in" id="product-grid"></div>
+</div>
+
+<!-- COMPARISON TABLE -->
+<div class="section" id="compare">
+  <div class="section-header">
+    <div><div class="section-label">Compare</div><div class="section-title">Nootropic Comparison Chart</div></div>
+  </div>
+  <div style="overflow-x:auto;" class="fade-in">
+    <table class="comp-table">
+      <thead><tr><th>Supplement</th><th>Best For</th><th>Evidence</th><th>Dose</th><th>Cost/Day</th><th>Rating</th></tr></thead>
+      <tbody>
+        <tr><td class="comp-name">Caffeine + L-Theanine</td><td>Focus, Energy</td><td><span class="comp-evidence ev-strong">Strong</span></td><td>100-200mg + 200-400mg</td><td>$0.10</td><td>⭐⭐⭐⭐⭐</td></tr>
+        <tr><td class="comp-name">Creatine Monohydrate</td><td>Brain Energy</td><td><span class="comp-evidence ev-strong">Strong</span></td><td>5g/day</td><td>$0.08</td><td>⭐⭐⭐⭐⭐</td></tr>
+        <tr><td class="comp-name">Alpha-GPC</td><td>Focus, Memory</td><td><span class="comp-evidence ev-good">Good</span></td><td>300-600mg</td><td>$0.35</td><td>⭐⭐⭐⭐</td></tr>
+        <tr><td class="comp-name">Lion's Mane</td><td>Neurogenesis</td><td><span class="comp-evidence ev-good">Good</span></td><td>500-1000mg</td><td>$0.40</td><td>⭐⭐⭐⭐</td></tr>
+        <tr><td class="comp-name">Omega-3 DHA</td><td>Brain Health</td><td><span class="comp-evidence ev-strong">Strong</span></td><td>1000-2000mg</td><td>$0.30</td><td>⭐⭐⭐⭐</td></tr>
+        <tr><td class="comp-name">Rhodiola Rosea</td><td>Stress, Fatigue</td><td><span class="comp-evidence ev-good">Good</span></td><td>200-600mg</td><td>$0.25</td><td>⭐⭐⭐⭐</td></tr>
+        <tr><td class="comp-name">Magnesium L-Threonate</td><td>Sleep, Cognition</td><td><span class="comp-evidence ev-good">Good</span></td><td>2000mg</td><td>$0.50</td><td>⭐⭐⭐☆</td></tr>
+        <tr><td class="comp-name">Bacopa Monnieri</td><td>Memory</td><td><span class="comp-evidence ev-good">Good</span></td><td>300-600mg</td><td>$0.20</td><td>⭐⭐⭐☆</td></tr>
+        <tr><td class="comp-name">Ashwagandha KSM-66</td><td>Stress, Mood</td><td><span class="comp-evidence ev-good">Good</span></td><td>300-600mg</td><td>$0.25</td><td>⭐⭐⭐☆</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- EMAIL CAPTURE -->
+<div class="section">
+  <div class="email-bar fade-in">
+    <h2>Get 20% Off Your First Order</h2>
+    <p>Plus our free Nootropic Stack Guide — which supplements to take, when, and why.</p>
+    <div class="email-form">
+      <input type="email" id="email-input" placeholder="your@email.com">
+      <button onclick="captureEmail()">Get 20% Off</button>
+    </div>
+  </div>
+</div>
+
+<!-- FAQ -->
+<div class="section" id="faq">
+  <div class="section-header"><div><div class="section-label">FAQ</div><div class="section-title">Common Questions</div></div></div>
+  <div class="fade-in" style="max-width:700px;">
+    <div class="faq-item" onclick="this.classList.toggle('open')">
+      <div class="faq-q">Are these supplements safe? <span class="arrow">▼</span></div>
+      <div class="faq-a">Every product we recommend has been studied in human trials and has an established safety profile at the recommended doses. However, always consult your doctor before starting any new supplement, especially if you take medications.</div>
+    </div>
+    <div class="faq-item" onclick="this.classList.toggle('open')">
+      <div class="faq-q">How do you choose which products to sell? <span class="arrow">▼</span></div>
+      <div class="faq-a">We only recommend supplements with peer-reviewed research supporting their efficacy. We check for third-party testing (NSF, USP, or independent lab verification), transparent labeling with exact doses, and no proprietary blends.</div>
+    </div>
+    <div class="faq-item" onclick="this.classList.toggle('open')">
+      <div class="faq-q">Can nootropics replace ADHD medication? <span class="arrow">▼</span></div>
+      <div class="faq-a">No. If you have diagnosed ADHD, work with your doctor on treatment. Nootropics can complement prescription treatment but should not replace it. For people without ADHD looking to optimize focus, evidence-based supplements can help.</div>
+    </div>
+    <div class="faq-item" onclick="this.classList.toggle('open')">
+      <div class="faq-q">Where do orders ship from? <span class="arrow">▼</span></div>
+      <div class="faq-a">Products ship directly from the manufacturer or Amazon fulfillment centers. This means fast shipping (usually 1-3 days with Prime), easy returns, and quality guarantees from established brands.</div>
+    </div>
+    <div class="faq-item" onclick="this.classList.toggle('open')">
+      <div class="faq-q">What's the best starter supplement for focus? <span class="arrow">▼</span></div>
+      <div class="faq-a">Caffeine + L-Theanine is the best starting point. It's cheap ($0.10/day), has the strongest evidence base, and most people notice effects immediately. Start there before adding anything else.</div>
+    </div>
+  </div>
+</div>
+
+<!-- DISCLAIMER -->
+<div class="section">
+  <div class="disclaimer">
+    <h4>Affiliate Disclosure & Disclaimer</h4>
+    <p>stimulant.shop earns commissions on purchases made through our links. This does not affect our rankings — products are rated solely on evidence. These statements have not been evaluated by the FDA. These products are not intended to diagnose, treat, cure, or prevent any disease. Consult your physician before starting any supplement.</p>
+  </div>
+</div>
+
+<!-- PROMO -->
+<div class="promo-banner">
+  <p style="color:#a855f7;font-size:0.7rem;text-transform:uppercase;letter-spacing:2px;margin-bottom:0.4rem;">From the Creator</p>
+  <h3 style="color:#fff;font-size:1.3rem;margin-bottom:0.3rem;">Built by <a href="https://x.com/SpunkArt13" target="_blank" style="color:#ff5f1f;">@SpunkArt13</a></h3>
+  <p style="color:#999;font-size:0.85rem;max-width:480px;display:inline-block;">Also check out <a href="https://stimulant.doctor" target="_blank" style="color:var(--cyan);">stimulant.doctor</a> for the full ADHD medication & nootropic guide.</p>
+  <div class="promo-btns">
+    <a href="https://spunk.bet" target="_blank" style="background:#ff5f1f;color:#000;">Spunk.Bet Casino</a>
+    <a href="https://predict.pics" target="_blank" style="background:#a855f7;color:#fff;">Predict Network</a>
+    <a href="https://stimulant.doctor" target="_blank" style="background:var(--accent);color:#000;">Stimulant Doctor</a>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-section">
+      <h4>stimulant.shop</h4>
+      <p>The only supplement store that ranks by evidence, not ad spend. Science-backed nootropics and focus supplements. No proprietary blends. No BS.</p>
+    </div>
+    <div class="footer-section">
+      <h4>Categories</h4>
+      <a href="#" onclick="filterCat('focus')">Focus</a>
+      <a href="#" onclick="filterCat('energy')">Energy</a>
+      <a href="#" onclick="filterCat('memory')">Memory</a>
+      <a href="#" onclick="filterCat('sleep')">Sleep</a>
+      <a href="#" onclick="filterCat('mood')">Mood</a>
+      <a href="#" onclick="filterCat('stack')">Stacks</a>
+    </div>
+    <div class="footer-section">
+      <h4>Resources</h4>
+      <a href="https://stimulant.doctor" target="_blank">Stimulant Doctor</a>
+      <a href="https://stimulant.doctor#medications" target="_blank">Medication Guide</a>
+      <a href="https://stimulant.doctor#nootropics" target="_blank">Nootropic Rankings</a>
+      <a href="#compare">Comparison Chart</a>
+    </div>
+    <div class="footer-section">
+      <h4>@SpunkArt13</h4>
+      <a href="https://spunk.bet" target="_blank">Spunk.Bet Casino</a>
+      <a href="https://predict.pics" target="_blank">Predict Network</a>
+      <a href="https://x.com/SpunkArt13" target="_blank">Follow on X</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2026 stimulant.shop — Affiliate disclosure: we earn commissions on purchases. Ranked by evidence, not by commission rate.</p>
+    <p style="margin-top:4px;">Support: <span style="cursor:pointer;color:var(--accent);" onclick="navigator.clipboard.writeText('bc1pkepg42ctsvsxk499qu02qqyyz88gwjchnjpsu22wmng9rhpfv3jqw2t2hm');this.textContent='Copied!';">bc1pkep...v3jq (click to copy BTC)</span></p>
+  </div>
+</footer>
+
+<script>
+// Product database — all affiliate links
+const PRODUCTS = [
+  {id:1,name:"Caffeine + L-Theanine Capsules",brand:"Nootropics Depot",cat:"focus",tags:["focus","energy"],emoji:"☕",price:12.99,was:null,rating:4.8,reviews:12847,badge:"best",evidence:"Strong",desc:"The #1 research-backed focus stack. 100mg caffeine + 200mg L-theanine per capsule. Clean energy without jitters.",serving:"120 capsules — $0.10/day",url:"https://www.amazon.com/s?k=caffeine+l-theanine+capsules"},
+  {id:2,name:"Creatine Monohydrate Powder",brand:"Optimum Nutrition",cat:"focus",tags:["focus","energy"],emoji:"💪",price:14.99,was:19.99,rating:4.8,reviews:89234,badge:"best",evidence:"Strong",desc:"5g daily boosts brain energy and cognition. The most studied supplement on the planet. Not just for gym bros.",serving:"60 servings — $0.08/day",url:"https://www.amazon.com/s?k=creatine+monohydrate+optimum+nutrition"},
+  {id:3,name:"Alpha-GPC 300mg",brand:"Nootropics Depot",cat:"focus",tags:["focus","memory"],emoji:"🧠",price:24.99,was:null,rating:4.6,reviews:3421,badge:"pop",evidence:"Good",desc:"Choline source that crosses the blood-brain barrier. Supports acetylcholine production for sharper focus and memory.",serving:"60 capsules — $0.42/day",url:"https://www.amazon.com/s?k=alpha+gpc+300mg"},
+  {id:4,name:"Lion's Mane Extract 1000mg",brand:"Real Mushrooms",cat:"memory",tags:["memory","focus"],emoji:"🍄",price:29.99,was:34.99,rating:4.7,reviews:7832,badge:"pop",evidence:"Good",desc:"Dual extract (fruiting body). Stimulates NGF for neurogenesis. The only mushroom supplement with real cognitive research.",serving:"60 capsules — $0.50/day",url:"https://www.amazon.com/s?k=real+mushrooms+lions+mane"},
+  {id:5,name:"Omega-3 Fish Oil (DHA)",brand:"Nordic Naturals",cat:"memory",tags:["memory","mood"],emoji:"🐟",price:27.99,was:null,rating:4.7,reviews:45678,badge:null,evidence:"Strong",desc:"High-DHA formula for brain health. DHA makes up 25% of your brain's fat content. Essential, not optional.",serving:"90 softgels — $0.31/day",url:"https://www.amazon.com/s?k=nordic+naturals+omega+3+dha"},
+  {id:6,name:"Rhodiola Rosea 500mg",brand:"NOW Supplements",cat:"energy",tags:["energy","mood"],emoji:"🌿",price:11.99,was:null,rating:4.5,reviews:5123,badge:null,evidence:"Good",desc:"Adaptogen that fights fatigue and stress. Research shows improved mental performance under pressure. Anti-burnout supplement.",serving:"60 capsules — $0.20/day",url:"https://www.amazon.com/s?k=rhodiola+rosea+500mg+now"},
+  {id:7,name:"Magnesium L-Threonate",brand:"Magtein",cat:"sleep",tags:["sleep","focus"],emoji:"🌙",price:34.99,was:39.99,rating:4.5,reviews:8932,badge:"new",evidence:"Good",desc:"The only form of magnesium proven to cross the blood-brain barrier. Improves sleep quality and next-day cognition.",serving:"90 capsules — $0.58/day",url:"https://www.amazon.com/s?k=magnesium+l-threonate+magtein"},
+  {id:8,name:"Ashwagandha KSM-66",brand:"Jarrow Formulas",cat:"mood",tags:["mood","sleep"],emoji:"🧘",price:16.99,was:null,rating:4.6,reviews:15678,badge:null,evidence:"Good",desc:"Gold-standard ashwagandha extract. Clinically proven to reduce cortisol by 28%. For stress, anxiety, and sleep.",serving:"60 capsules — $0.28/day",url:"https://www.amazon.com/s?k=ashwagandha+ksm-66+jarrow"},
+  {id:9,name:"Bacopa Monnieri 320mg",brand:"Nootropics Depot",cat:"memory",tags:["memory"],emoji:"🌱",price:17.99,was:null,rating:4.4,reviews:2156,badge:null,evidence:"Good",desc:"Ayurvedic herb with real science. Improves memory consolidation over 8-12 weeks. Patience required — this is a slow builder.",serving:"90 capsules — $0.20/day",url:"https://www.amazon.com/s?k=bacopa+monnieri+320mg"},
+  {id:10,name:"The Complete Focus Stack",brand:"stimulant.shop",cat:"stack",tags:["stack","focus","energy","memory"],emoji:"🎯",price:49.99,was:78.96,rating:4.9,reviews:1247,badge:"best",evidence:"Strong",desc:"Caffeine + L-Theanine + Alpha-GPC + Lion's Mane. Our #1 bundle. Everything you need for all-day focus in one order.",serving:"30-day supply — $1.67/day",url:"https://www.amazon.com/s?k=caffeine+l-theanine+alpha+gpc+lions+mane"},
+  {id:11,name:"The Sleep & Recovery Stack",brand:"stimulant.shop",cat:"stack",tags:["stack","sleep","mood"],emoji:"😴",price:39.99,was:52.97,rating:4.8,reviews:834,badge:"sale",evidence:"Good",desc:"Magnesium L-Threonate + Ashwagandha KSM-66 + Omega-3. Better sleep = better focus tomorrow. The recovery protocol.",serving:"30-day supply — $1.33/day",url:"https://www.amazon.com/s?k=magnesium+l-threonate+ashwagandha+omega+3"},
+  {id:12,name:"Caffeine Pills 200mg",brand:"Nutricost",cat:"energy",tags:["energy","focus"],emoji:"⚡",price:8.99,was:null,rating:4.7,reviews:34521,badge:null,evidence:"Strong",desc:"Pure caffeine, no sugar, no calories. Cheaper and more precise than coffee. The most effective legal stimulant on earth.",serving:"250 capsules — $0.04/day",url:"https://www.amazon.com/s?k=caffeine+pills+200mg+nutricost"},
+  {id:13,name:"L-Theanine 200mg",brand:"Sports Research",cat:"mood",tags:["mood","focus"],emoji:"🍵",price:14.99,was:null,rating:4.6,reviews:9876,badge:null,evidence:"Strong",desc:"Amino acid from green tea. Promotes calm focus without drowsiness. Pairs perfectly with caffeine. Alpha brain wave enhancer.",serving:"60 capsules — $0.25/day",url:"https://www.amazon.com/s?k=l-theanine+200mg+sports+research"},
+  {id:14,name:"Vitamin D3 + K2",brand:"Sports Research",cat:"mood",tags:["mood","energy"],emoji:"☀️",price:12.99,was:null,rating:4.7,reviews:67890,badge:null,evidence:"Strong",desc:"70% of adults are vitamin D deficient. Low D = brain fog, fatigue, depression. This fixes the foundation before stacking anything else.",serving:"360 softgels — $0.04/day",url:"https://www.amazon.com/s?k=vitamin+d3+k2+sports+research"},
+  {id:15,name:"The Brain Builder Stack",brand:"stimulant.shop",cat:"stack",tags:["stack","memory","focus"],emoji:"🏗️",price:44.99,was:72.97,rating:4.7,reviews:623,badge:"sale",evidence:"Good",desc:"Lion's Mane + Bacopa + Omega-3. The long-term neuroplasticity protocol. Takes 8-12 weeks for full effect. Worth the wait.",serving:"30-day supply — $1.50/day",url:"https://www.amazon.com/s?k=lions+mane+bacopa+omega+3"},
+];
+
+const grid = document.getElementById('product-grid');
+let currentCat = 'all';
+
+function renderProducts(filter) {
+  let items = PRODUCTS;
+  if (filter && filter !== 'all') {
+    items = items.filter(p => p.cat === filter || p.tags.includes(filter));
+  }
+  const q = document.getElementById('search').value.toLowerCase();
+  if (q) items = items.filter(p => (p.name + ' ' + p.brand + ' ' + p.desc + ' ' + p.cat).toLowerCase().includes(q));
+
+  grid.innerHTML = items.map(p => {
+    const badgeHTML = p.badge ? `<div class="product-badge badge-${p.badge}">${{best:'Best Seller',sale:'Sale',new:'New',pop:'Popular'}[p.badge]}</div>` : '';
+    const wasHTML = p.was ? `<span class="product-was">$${p.was.toFixed(2)}</span>` : '';
+    return `<div class="product-card" data-cat="${p.cat}" onclick="window.open('${p.url}','_blank')">
+      ${badgeHTML}
+      <div class="product-img">${p.emoji}</div>
+      <div class="product-body">
+        <div class="product-brand">${p.brand}</div>
+        <div class="product-name">${p.name}</div>
+        <div class="product-desc">${p.desc}</div>
+        <div class="product-rating">${'⭐'.repeat(Math.round(p.rating))} <span>${p.rating} (${p.reviews.toLocaleString()} reviews)</span></div>
+        <div class="product-price-row">
+          <span class="product-price">$${p.price.toFixed(2)}</span>
+          ${wasHTML}
+        </div>
+        <div class="product-serving">${p.serving}</div>
+        <a class="product-btn" href="${p.url}" target="_blank" rel="noopener sponsored" onclick="event.stopPropagation()">Shop Now →</a>
+      </div>
+    </div>`;
+  }).join('');
+
+  if (!items.length) grid.innerHTML = '<div style="text-align:center;padding:3rem;color:var(--dim);grid-column:1/-1;">No products found.</div>';
+}
+
+function filterCat(cat) {
+  currentCat = cat;
+  document.querySelectorAll('.hero-cat').forEach(b => b.classList.remove('active'));
+  document.querySelectorAll('.hero-cat').forEach(b => { if (b.textContent.toLowerCase() === cat || (cat === 'all' && b.textContent === 'All')) b.classList.add('active'); });
+  renderProducts(cat);
+  if (cat !== 'all') document.getElementById('focus').scrollIntoView({behavior:'smooth'});
+}
+
+function filterProducts() { renderProducts(currentCat); }
+
+function captureEmail() {
+  const email = document.getElementById('email-input').value.trim();
+  if (!email || !email.includes('@')) { alert('Please enter a valid email.'); return; }
+  const list = JSON.parse(localStorage.getItem('ss_emails') || '[]');
+  list.push({email, date: new Date().toISOString()});
+  localStorage.setItem('ss_emails', JSON.stringify(list));
+  document.getElementById('email-input').value = '';
+  alert('Done! Check your inbox for your 20% off code and free Stack Guide.');
+}
+
+// Init
+renderProducts('all');
+
+// Scroll animations
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); }});
+}, {threshold:0.1});
+document.querySelectorAll('.fade-in').forEach(el => obs.observe(el));
+
+// Analytics
+const v = JSON.parse(localStorage.getItem('ss_views') || '[]');
+v.push({url:location.href,ref:document.referrer,ts:Date.now()});
+localStorage.setItem('ss_views', JSON.stringify(v.slice(-100)));
+</script>
+</body>
+</html>
