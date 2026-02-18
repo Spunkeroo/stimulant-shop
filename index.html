@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Stimulant Shop — Nootropics, Focus Supplements & Cognitive Enhancers</title>
+  <title>Stimulant Shop — Best Nootropics & Focus Supplements</title>
   <meta name="description" content="Shop the best nootropics, focus supplements, and cognitive enhancers. Curated by science. Ranked by evidence. Free shipping on every order.">
   <meta name="keywords" content="nootropics, focus supplements, cognitive enhancers, L-theanine, alpha GPC, lion's mane, caffeine pills, brain supplements, ADHD supplements">
   <meta property="og:title" content="Stimulant Shop — Science-Backed Focus Supplements">
@@ -11,6 +11,9 @@
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://stimulant.shop">
   <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@SpunkArt13">
+  <meta name="twitter:title" content="Stimulant Shop — Best Nootropics & Focus Supplements">
+  <meta name="twitter:description" content="Curated nootropics and focus supplements ranked by science. Free shipping via Amazon.">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💊</text></svg>">
   <link rel="canonical" href="https://stimulant.shop">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -196,7 +199,8 @@
       <a href="#energy">Energy</a>
       <a href="#stacks">Stacks</a>
       <a href="#compare">Compare</a>
-      <a href="https://stimulant.doctor" target="_blank">Learn</a>
+      <a href="https://stimulant.wiki" target="_blank" rel="noopener noreferrer">Stimulant Wiki</a>
+    <a href="https://stimulant.doctor" target="_blank" rel="noopener noreferrer">Learn</a>
     </div>
   </div>
 </nav>
@@ -323,12 +327,12 @@
 <!-- PROMO -->
 <div class="promo-banner">
   <p style="color:#a855f7;font-size:0.7rem;text-transform:uppercase;letter-spacing:2px;margin-bottom:0.4rem;">From the Creator</p>
-  <h3 style="color:#fff;font-size:1.3rem;margin-bottom:0.3rem;">Built by <a href="https://x.com/SpunkArt13" target="_blank" style="color:#ff5f1f;">@SpunkArt13</a></h3>
-  <p style="color:#999;font-size:0.85rem;max-width:480px;display:inline-block;">Also check out <a href="https://stimulant.doctor" target="_blank" style="color:var(--cyan);">stimulant.doctor</a> for the full ADHD medication & nootropic guide.</p>
+  <h3 style="color:#fff;font-size:1.3rem;margin-bottom:0.3rem;">Built by <a href="https://x.com/SpunkArt13" target="_blank" rel="noopener noreferrer" style="color:#ff5f1f;">@SpunkArt13</a></h3>
+  <p style="color:#999;font-size:0.85rem;max-width:480px;display:inline-block;">Also check out <a href="https://stimulant.doctor" target="_blank" rel="noopener noreferrer" style="color:var(--cyan);">stimulant.doctor</a> for the full ADHD medication & nootropic guide.</p>
   <div class="promo-btns">
-    <a href="https://spunk.bet" target="_blank" style="background:#ff5f1f;color:#000;">Spunk.Bet Casino</a>
-    <a href="https://predict.pics" target="_blank" style="background:#a855f7;color:#fff;">Predict Network</a>
-    <a href="https://stimulant.doctor" target="_blank" style="background:var(--accent);color:#000;">Stimulant Doctor</a>
+    <a href="https://spunk.bet" target="_blank" rel="noopener noreferrer" style="background:#ff5f1f;color:#000;">Spunk.Bet Casino</a>
+    <a href="https://predict.pics" target="_blank" rel="noopener noreferrer" style="background:#a855f7;color:#fff;">Predict Network</a>
+    <a href="https://stimulant.doctor" target="_blank" rel="noopener noreferrer" style="background:var(--accent);color:#000;">Stimulant Doctor</a>
   </div>
 </div>
 
@@ -349,16 +353,16 @@
     </div>
     <div class="footer-section">
       <h4>Resources</h4>
-      <a href="https://stimulant.doctor" target="_blank">Stimulant Doctor</a>
-      <a href="https://stimulant.doctor#medications" target="_blank">Medication Guide</a>
-      <a href="https://stimulant.doctor#nootropics" target="_blank">Nootropic Rankings</a>
+      <a href="https://stimulant.doctor" target="_blank" rel="noopener noreferrer">Stimulant Doctor</a>
+      <a href="https://stimulant.doctor#medications" target="_blank" rel="noopener noreferrer">Medication Guide</a>
+      <a href="https://stimulant.doctor#nootropics" target="_blank" rel="noopener noreferrer">Nootropic Rankings</a>
       <a href="#compare">Comparison Chart</a>
     </div>
     <div class="footer-section">
       <h4>@SpunkArt13</h4>
-      <a href="https://spunk.bet" target="_blank">Spunk.Bet Casino</a>
-      <a href="https://predict.pics" target="_blank">Predict Network</a>
-      <a href="https://x.com/SpunkArt13" target="_blank">Follow on X</a>
+      <a href="https://spunk.bet" target="_blank" rel="noopener noreferrer">Spunk.Bet Casino</a>
+      <a href="https://predict.pics" target="_blank" rel="noopener noreferrer">Predict Network</a>
+      <a href="https://x.com/SpunkArt13" target="_blank" rel="noopener noreferrer">Follow on X</a>
     </div>
   </div>
   <div class="footer-bottom">
@@ -437,7 +441,7 @@ function captureEmail() {
   if (!email || !email.includes('@')) { alert('Please enter a valid email.'); return; }
   const list = JSON.parse(localStorage.getItem('ss_emails') || '[]');
   list.push({email, date: new Date().toISOString()});
-  localStorage.setItem('ss_emails', JSON.stringify(list));
+  localStorage.setItem('ss_emails', JSON.stringify(list.slice(-500)));
   document.getElementById('email-input').value = '';
   alert('Done! Check your inbox for your 20% off code and free Stack Guide.');
 }
